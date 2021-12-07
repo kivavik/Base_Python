@@ -18,7 +18,6 @@ class Cell:
         return Cell(self.nums / other.nums)
 
     def make_order(self, other):
-        #        return '\n'.join([other for _ in range(self.nums // other)]) + '\n' + (self.nums % other)
         return '\n'.join(["*" * other for _ in range(self.nums // other)]) + '\n' + "*" * (self.nums % other)
 
 cell_1 = 13
