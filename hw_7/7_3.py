@@ -18,14 +18,16 @@ class Cell:
         return Cell(self.nums / other.nums)
 
     def make_order(self, other):
-        return '\n'.join([other for _ in range(self.nums // other)]) + '\n' + (self.nums % other)
+        #        return '\n'.join([other for _ in range(self.nums // other)]) + '\n' + (self.nums % other)
+        return '\n'.join(["*" * other for _ in range(self.nums // other)]) + '\n' + "*" * (self.nums % other)
 
-
-c_1 = Cell(13)
-c_2 = Cell(5)
+cell_1 = 13
+cell_2 = 5
+c_1 = Cell(cell_1)
+c_2 = Cell(cell_2)
 
 print(Cell.__add__(c_1, c_2))
 print(Cell.__sub__(c_1, c_2))
 print(Cell.__mul__(c_1, c_2))
 print(Cell.__truediv__(c_1, c_2))
-print(Cell.make_order(13, 5))
+print(Cell.make_order(c_1, cell_2))
